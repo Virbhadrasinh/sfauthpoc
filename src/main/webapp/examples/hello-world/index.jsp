@@ -69,7 +69,7 @@
 					params: {
 						response_type : "token",
 						client_id : "3MVG9ZL0ppGP5UrD3E2l0ZOtoL_07_YlrJ3Y26p2C1dFyafzQ4o3.VUqx7MO4Csp4QLw1b2ZpRg_IPYsW0zAb",
-						redirect_uri : encodeURIComponent("https://localhost:8443/sdk/callback.html")
+						redirect_uri : encodeURIComponent("https://sfoauthpoc.herokuapp.com/sdk/callback.html")
 				}});
 		}
 		
