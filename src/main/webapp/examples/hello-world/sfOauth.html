@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Hello World Canvas oAuth</title>
+    <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
+    <!-- Include all the canvas JS dependencies in one file -->
+    <script type="text/javascript" src="/sdk/js/canvas-all.js"></script>
+    <link rel="stylesheet" href="/examples/hello-world/app.css" />
+</head>
+<body>
+	<script>
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+	
+		function logout() {
+			Sfdc.canvas.oauth.logout();
+		}
+		
+		function authorize() {
+			var loginUrl = getParameterByName("loginUrl");
+
+			//if we don't get login.salesforce, then we're in a sandbox.
+			if(loginUrl.indexOf('login.salesforce.com')!==-1) {
+				loginUrl = "https://login.salesforce.com/services/oauth2/authorize";
+			} else {
+				loginUrl = "https://test.salesforce.com/services/oauth2/authorize";
+			}
+			//begin login/authorize process
+			Sfdc.canvas.oauth.login(
+				{uri : loginUrl,
+					params: {
+						response_type : "token",
+						client_id : "3MVG9ZL0ppGP5UrD3E2l0ZOtoL_07_YlrJ3Y26p2C1dFyafzQ4o3.VUqx7MO4Csp4QLw1b2ZpRg_IPYsW0zAb",
+						redirect_uri : encodeURIComponent("https://localhost:8443/sdk/callback.html")
+				}});
+		}
+		
+		function refreshApp() {
+			Sfdc.canvas.client.repost({refresh : true});
+		}
+	
+		Sfdc.canvas(function(){
+			var loggedIn = Sfdc.canvas.oauth.loggedin();
+	    	if (loggedIn) {
+	      		Sfdc.canvas.client.repost({refresh : true});
+	    	}
+	    	document.getElementById("login").addEventListener("click", function(){
+	    		logout();
+	    		authorize();
+	    	});
+	  	});
+	</script>
+	
+	
+	<div id="oauth">
+		<h2 class="sub-title">User Authentication Required</h2>
+	</div>
+
+	<div class="button-wrapper oauth">
+  		<button id="login" class="btn btn-default">authorize app</button>
+	</div>
+</body>
+</html>

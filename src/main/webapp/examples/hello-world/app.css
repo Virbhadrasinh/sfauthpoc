@@ -1,0 +1,56 @@
+div#oauth {
+  	width: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+h2.sub-title {
+  	font-size: 18px;
+}
+
+div.button-wrapper {
+  color:rgb(0,112,210);
+}
+
+div.button-wrapper.oauth {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc !important;
+}
+
+.btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.btn {
+	height: 35px;
+    width: 112px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
