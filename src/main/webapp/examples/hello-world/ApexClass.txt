@@ -1,0 +1,36 @@
+public class MyCanvasListener 
+implements Canvas.CanvasLifecycleHandler{
+    
+    public Class Record {
+        public String Id;
+        public Attributes attributes;
+    }
+    
+    public Class Attributes {
+        public String type;
+        public String url;
+    }
+    
+    public Set<Canvas.ContextTypeEnum> excludeContextTypes(){
+        Set<Canvas.ContextTypeEnum> excluded = new Set<Canvas.ContextTypeEnum>();
+        return excluded;
+    }
+    
+    public void onRender(Canvas.RenderContext renderContext) {
+
+        
+         System.debug('Canvas lifecycle called.');
+    // Get the Application and Environment context from the RenderContext
+    Canvas.ApplicationContext app = renderContext.getApplicationContext();
+    Canvas.EnvironmentContext env = renderContext.getEnvironmentContext();
+
+    // Add Name, BillingAddress and YearStarted to fields 
+    // (assumes we'll run from a component on the Account detail page)
+    Set<String> fields = new Set<String>{'Id','Name','TickerSymbol','FirstName'};
+    env.addEntityFields(fields);
+
+    
+       
+        
+}
+}
