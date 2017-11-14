@@ -6,7 +6,7 @@
     String[] signedRequest = parameters.get("signed_request");
     String[] sfdcCanvasAuth = parameters.get("_sfdc_canvas_auth");
     String yourConsumerSecret = System.getenv("CANVAS_CONSUMER_SECRET");
-    yourConsumerSecret = "6837139541783427873";
+    yourConsumerSecret = "67233088417185760";
     String signedRequestJson = "";
     boolean isSignedRequest = false;
     //yourConsumerSecret="6837139541783427873";
@@ -68,7 +68,7 @@
 				{uri : loginUrl,
 					params: {
 						response_type : "token",
-						client_id : "3MVG9ZL0ppGP5UrD3E2l0ZOtoL_07_YlrJ3Y26p2C1dFyafzQ4o3.VUqx7MO4Csp4QLw1b2ZpRg_IPYsW0zAb",
+						client_id : "3MVG9d8..z.hDcPJ2beiW_rheelyPLCRow0SVIgjP4TrEqcULYPI5li6A6meTMSzF22OlqjsoCYXTO5HQ9P6V",
 						redirect_uri : encodeURIComponent("https://sfdcoauthpoc.herokuapp.com/sdk/callback.html")
 				}});
 		}
