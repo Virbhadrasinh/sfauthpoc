@@ -6,7 +6,7 @@
     String[] signedRequest = parameters.get("signed_request");
     String[] sfdcCanvasAuth = parameters.get("_sfdc_canvas_auth");
     String yourConsumerSecret = System.getenv("CANVAS_CONSUMER_SECRET");
-    yourConsumerSecret = "6837139541783427873";
+    yourConsumerSecret = "67233088417185760";
     String signedRequestJson = "";
     boolean isSignedRequest = false;
     //yourConsumerSecret="6837139541783427873";
