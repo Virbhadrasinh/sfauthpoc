@@ -107,10 +107,13 @@
     	    	document.getElementById('auth-container').style.display = 'block';
         	} else {
         		
-        		debugger;
         		
         		var sr = JSON.parse('<%=signedRequestJson%>');
                 // Save the token
+		    
+		    console.log("sr---->",sr);
+                
+                debugger;
                 Sfdc.canvas.oauth.token(sr.oauthToken);
                 Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
                 
