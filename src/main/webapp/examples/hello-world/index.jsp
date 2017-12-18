@@ -113,9 +113,9 @@
 		    
 		    console.log("sr---->",sr);
                 
-                debugger;
+
                 Sfdc.canvas.oauth.token(sr.oauthToken);
-                Sfdc.canvas.byId('username').innerHTML = '<%=signedRequestJson%>';
+                Sfdc.canvas.byId('username').innerHTML = JSON.stringify(sr.context.environment.record);
                 
                 document.getElementById('usename-container').style.display = 'block';
         	}
