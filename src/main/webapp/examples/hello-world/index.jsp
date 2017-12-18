@@ -90,7 +90,7 @@
     </div>
     
     <div id="usename-container" style="display: none;">
-    	<h1>Hello <span id='username'></span></h1>
+	<span id='username'></span>
     </div>
     
     <script>
