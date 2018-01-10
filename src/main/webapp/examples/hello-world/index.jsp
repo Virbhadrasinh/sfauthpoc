@@ -68,6 +68,7 @@
 				{uri : loginUrl,
 					params: {
 						response_type : "token",
+						scope : "api,chatter_api,custom_permissions,full,id,openid,visualforce,web",
 						client_id : "3MVG9ZL0ppGP5UrD3E2l0ZOtoL_07_YlrJ3Y26p2C1dFyafzQ4o3.VUqx7MO4Csp4QLw1b2ZpRg_IPYsW0zAb",
 						redirect_uri : encodeURIComponent("https://sfdcoauthpoc.herokuapp.com/sdk/callback.html")
 				}});
